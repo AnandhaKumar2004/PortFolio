@@ -1,0 +1,185 @@
+.projects-container {
+  padding: 2rem;
+  text-align: center;
+  color: white; /* Assuming dark background from App.css */
+}
+
+.projects-heading {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #f7931e; /* Example color for heading */
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-content: center; /* Center items if fewer than full row */
+}
+
+.project-card {
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Ensures image corners are rounded */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px; /* Fixed height for consistency */
+  object-fit: cover; /* Covers the area, cropping if necessary */
+  border-bottom: 1px solid #333;
+}
+
+.project-details {
+  padding: 1.5rem;
+  flex-grow: 1; /* Allows details section to expand */
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #f7931e;
+}
+
+.project-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #bbb;
+  margin-bottom: 1rem;
+  flex-grow: 1; /* Allows description to take available space */
+}
+
+.technologies {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-badge {
+  background-color: #333;
+  color: #eee;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  white-space: nowrap; /* Prevent breaking in the middle of a badge */
+}
+
+.project-links {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around; /* Distribute links evenly */
+  gap: 1rem;
+}
+
+.project-links a {
+  display: inline-flex; /* For icon and text alignment */
+  align-items: center;
+  padding: 0.8rem 1.2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.project-links a svg {
+  margin-right: 0.5rem;
+}
+
+.github-link {
+  background-color: #333;
+  color: #eee;
+  border: 1px solid #555;
+}
+
+.github-link:hover {
+  background-color: #555;
+}
+
+.live-link {
+  background-color: #f7931e;
+  color: #1a1a1a;
+  border: 1px solid #f7931e;
+}
+
+.live-link:hover {
+  background-color: #f7931e;
+}
+
+.view-more-container {
+  margin-top: 2rem;
+}
+
+.view-more-link {
+  background-color: #f7931e;
+  color: #1a1a1a;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* ========================================================== */
+/* Media Query for Mobile/Small Screens (up to 768px)         */
+/* ========================================================== */
+@media (max-width: 768px) {
+    /* ... (Your existing styles for mobile-navbar, services, etc.) ... */
+
+    /* 🔑 FIX: Apply padding-top to the main projects container */
+    .projects-container {
+        /* This padding pushes the content down below the fixed navbar (approx 60-70px tall) */
+        padding-top: 80px; 
+        
+        /* Ensure horizontal padding is reasonable on small screens */
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* Adjust the grid for mobile: 1 column */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Ensure card image and padding are responsive */
+    .project-image {
+        height: auto; /* Let image height adjust naturally */
+    }
+
+    .project-card {
+        width: 100%;
+        max-width: 400px; /* Optional: cap card width on tablets */
+        margin: 0 auto;
+    }
+
+    .project-details {
+        padding: 1rem;
+    }
+
+    .project-links {
+        flex-direction: column; /* Stack links vertically on small screens */
+        gap: 0.5rem;
+    }
+    
+    .project-links a,
+    .view-more-link {
+        width: 100%; /* Make buttons full width */
+        justify-content: center;
+        padding: 1rem 0; /* Increase padding for tap area */
+    }
+}

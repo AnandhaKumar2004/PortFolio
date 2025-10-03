@@ -1,0 +1,278 @@
+/* Container for the whole sidebar (Desktop View) */
+.big-bg-container {
+    width: 220px;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Logo at the top */
+.logo-container {
+    margin-bottom: 60px;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+}
+
+/* Menu container */
+.content-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    margin: 25px 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Style the NavLink a tag directly */
+.list-item a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #13274f; /* dark navy blue like in screenshot */
+    transition: color 0.3s ease, background-color 0.3s ease, padding 0.3s ease;
+    width: 100%;
+    padding: 10px 20px; /* add padding for the background to show */
+    border-radius: 5px; /* rounded corners for the background */
+}
+
+/* Hover effect on NavLink */
+.list-item a:hover {
+    color: #000;
+    background-color: #f0f0f0; /* Light hover color for desktop */
+}
+
+.list-item p {
+    margin: 0;
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Active link styling */
+.list-item a.active-nav {
+    background-color: #ff9900; /* The orange color */
+    color: #fff; /* White text for contrast */
+}
+
+.list-item a.active-nav p,
+.list-item a.active-nav svg {
+    color: #fff;
+}
+
+/* --- Mobile Specific Styles --- */
+
+/* Initially hide the mobile navbar for desktop view */
+.mobile-navbar {
+    display: none;
+}
+
+/* Hamburger menu button style */
+.menu-icon {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #13274f;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000; /* Ensure button is above other content */
+}
+
+/* Mobile menu overlay styles */
+.mobile-menu {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.98); /* Slightly transparent white overlay */
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%); /* Start off-screen */
+}
+
+.mobile-menu.open {
+    display: flex;
+    transform: translateX(0); /* Slide in when open */
+}
+
+/* Adjust list and link styles for the mobile menu */
+.mobile-menu .list {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.mobile-menu .list-item a {
+    padding: 15px 30px;
+    margin: 10px 0;
+    font-size: 18px;
+    justify-content: center; /* Center links in mobile menu */
+    width: auto;
+}
+
+.mobile-menu .list-item a:hover {
+    background-color: #ff9900;
+    color: #fff;
+}
+.mobile-menu .list-item a:hover p,
+.mobile-menu .list-item a:hover svg {
+    color: #fff;
+}
+/* Ensure active link styles apply correctly in mobile */
+.mobile-menu .list-item a.active-nav {
+    background-color: #ff9900;
+    color: #fff;
+}
+.mobile-menu .list-item a.active-nav p,
+.mobile-menu .list-item a.active-nav svg {
+    color: #fff;
+}
+
+/* --- Media Query for Mobile/Small Screens (e.g., up to 768px) --- */
+/* --- Mobile Specific Styles --- */
+
+/* Initially hide the mobile navbar for desktop view */
+.mobile-navbar {
+    display: none;
+}
+
+/* Hamburger menu button style (Existing - ensure it has the necessary z-index) */
+.menu-icon {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #13274f;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+}
+
+/* ... other mobile-menu styles remain the same ... */
+
+/* ========================================================== */
+/* Media Query for Mobile/Small Screens             */
+/* ========================================================== */
+@media (max-width: 768px) {
+    /* 1. Hide the full sidebar on small screens */
+    .big-bg-container {
+        display: none;
+    }
+
+    /* 2. Show the mobile navbar and fix it to the top */
+    .mobile-navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        
+        /* Fixed Positioning for the white bar */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        box-sizing: border-box;
+        z-index: 1000; /* Ensure it's above everything */
+    }
+
+    .logo-container-mobile .logo {
+        width: 60px; /* Smaller logo for mobile */
+    }
+
+    /* Hamburger menu button style */
+    .menu-icon {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: #13274f;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 1001; /* Must be higher than mobile-navbar z-index */
+    }
+
+    /* 3. Mobile menu overlay styles (full screen overlay) */
+    .mobile-menu {
+        display: flex; /* Always flex in the media query, controlled by 'open' class */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.98);
+        z-index: 999;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(100%); /* Start off-screen */
+        overflow-y: auto; /* Allow scrolling if menu is long */
+    }
+
+    .mobile-menu.open {
+        transform: translateX(0); /* Slide in when open */
+    }
+
+    /* Adjust list and link styles for the mobile menu */
+    .mobile-menu .list {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+    }
+    
+    .mobile-menu .list-item {
+        margin: 15px 0;
+    }
+
+    .mobile-menu .list-item a {
+        padding: 15px 30px;
+        font-size: 18px;
+        justify-content: center;
+        width: auto;
+    }
+
+    /* Hover and Active states for mobile menu links */
+    .mobile-menu .list-item a:hover,
+    .mobile-menu .list-item a.active-nav {
+        background-color: #ff9900;
+        color: #fff;
+    }
+    .mobile-menu .list-item a:hover p,
+    .mobile-menu .list-item a:hover svg,
+    .mobile-menu .list-item a.active-nav p,
+    .mobile-menu .list-item a.active-nav svg {
+        color: #fff;
+    }
+
+    /* 4. FIX FOR CONTENT OVERLAP */
+    /* IMPORTANT: Replace '.your-main-content-wrapper' with the actual class/ID 
+       of the element that contains your "Contact Me" heading and all other page content.
+    */
+    .your-main-content-wrapper { 
+        padding-top: 80px; /* Push the content down below the fixed navbar */
+    }
+}

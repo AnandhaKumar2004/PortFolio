@@ -1,0 +1,122 @@
+.services {
+    /* Assuming a wide background here, 1000px width is too wide for most screens,
+       but we keep the original intent and rely on max-width. */
+    width: 1000px;
+    max-width: 90%;
+    margin: 60px auto;
+    text-align: center;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.services h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.services > p {
+    margin-bottom: 40px;
+    color: #ccc;
+    font-size: 1rem;
+}
+
+/* Cards container - DEFAULT: 2x2 grid for Desktop */
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    justify-items: center;
+}
+
+/* Each card */
+.service-card {
+    background: #fff; /* white card */
+    color: #000;      /* black text for readability */
+    border-radius: 20px;
+    padding: 25px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    width: 350px;
+    height: 250px; /* Fixed height can cause issues with content on different screen sizes */
+}
+
+/* Card hover */
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Card image */
+.service-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+/* Card title */
+.service-card h2 {
+    font-size: 1.2rem;
+    color: #f7931e; /* orange accent */
+    margin-bottom: 12px;
+}
+
+/* Card description */
+.service-card p {
+    color: #333;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ========================================================== */
+/* RESPONSIVE CSS for Mobile/Tablet View (e.g., up to 768px)  */
+/* ========================================================== */
+@media (max-width: 768px) {
+    .services {
+        /* Increase margin for breathing room on smaller screens */
+        margin: 40px auto;
+    }
+
+    /* Change to a single column layout */
+    .service-cards {
+        grid-template-columns: 1fr; /* Stacks cards vertically */
+        gap: 20px; /* Slightly reduce gap between stacked cards */
+    }
+
+    /* Make the cards responsive */
+    .service-card {
+        width: 100%; /* Take up the full width of the services container (max-width: 90%) */
+        max-width: 400px; /* Optional: Prevent cards from getting too wide on tablets */
+        height: auto; /* Remove fixed height to allow content to dictate card size */
+        margin: 0 auto; /* Center the cards if max-width is applied */
+    }
+
+    .service-card h2 {
+        font-size: 1.3rem; /* Slightly larger title for better readability on mobile */
+    }
+
+    .service-card p {
+        font-size: 1rem;
+    }
+
+    .services {
+        /* This padding pushes the content down below the fixed navbar (approx 60-70px tall) */
+        padding-top: 80px; 
+        
+        /* Ensure the margin remains centered and responsive */
+        margin: 0 auto 60px auto; 
+        /* Reset top margin to 0 and use padding-top for clearance */
+    }
+
+    .service-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .service-card {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+    
+}

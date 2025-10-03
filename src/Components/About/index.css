@@ -1,0 +1,156 @@
+/* Base reset (Good practice, assuming this is at the top of your CSS file) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Assuming this is set in a global or layout file, but included for context */
+    background-color: #121212;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* -------------------- About Section Base Styles (Desktop) -------------------- */
+
+.about {
+    width: 100%;
+    max-width: 1000px;
+    margin: 50px auto; /* Original desktop margin */
+    padding: 0 20px;
+    line-height: 1.6;
+}
+
+/* Headings */
+.about h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.about h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.orange {
+    color: #f7931e;
+    font-weight: bold;
+}
+
+/* Paragraph (intro) */
+.about-para {
+    color: #ddd;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    max-width: 800px;
+}
+
+/* Container for two halves */
+.second-half-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 20px;
+    flex-wrap: wrap; /* allows stacking on smaller screens */
+}
+
+/* Left side bio-data */
+.bio-data {
+    flex: 1;
+    min-width: 280px;
+    padding-top: 20px;
+}
+
+.bio-data p {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #f7931e, #fbb034);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Right side skills */
+.skills {
+    flex: 1;
+    min-width: 280px;
+    padding-top: 20px;
+}
+
+/* -------------------- Responsive Media Queries -------------------- */
+
+@media (max-width: 768px) {
+    /* FIX FOR OVERLAP: Push content down below the fixed mobile navbar (80px clearance) */
+    .about {
+        padding-top: 80px; 
+        /* Reset top margin to 0 and use padding-top for clearance */
+        margin: 0 auto 50px auto; 
+        /* Maintain horizontal padding */
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .about h1 {
+        font-size: 1.6rem;
+    }
+
+    .about h2 {
+        font-size: 1.3rem;
+    }
+
+    .about-para {
+        font-size: 0.95rem;
+    }
+
+    /* Stack bio and skills vertically */
+    .second-half-container {
+        flex-direction: column;
+        gap: 30px; 
+    }
+
+    .bio-data, .skills {
+        width: 100%;
+        min-width: initial; 
+        padding-top: 0; /* Remove top padding since they are stacked */
+    }
+}
+
+@media (max-width: 480px) {
+    .about {
+        margin-bottom: 30px;
+        padding-left: 15px; /* Adjust side padding for very small screens */
+        padding-right: 15px;
+        /* padding-top is inherited from the 768px query */
+    }
+
+    .about h1 {
+        font-size: 1.4rem;
+    }
+
+    .about h2 {
+        font-size: 1.1rem;
+    }
+
+    /* Make the button full width */
+    .btn {
+        width: 100%;
+        text-align: center;
+        display: block; 
+    }
+}
