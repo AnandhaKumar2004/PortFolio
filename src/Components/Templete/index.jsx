@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import logo from "../../assets/logo.png";
 import "./index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
@@ -60,7 +61,7 @@ const Template = () => {
                 <div className="logo-container">
                     <NavLink to="/" className={getNavLinkClass} end onClick={toggleMenu}>
                       <img
-                        src="../src/assets/logo.png"
+                        src={logo}
                         alt="Company Logo"
                         className="logo"
                     />

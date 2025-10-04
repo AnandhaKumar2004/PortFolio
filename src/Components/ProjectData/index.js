@@ -1,3 +1,7 @@
+import emoji from '../../assets/emoji-game.png';
+import jobby from '../../assets/jobby-apps.png';
+import wiki from '../../assets/wiki.png';  
+
 const ProjectData = [
   {
     id: 1,
@@ -6,7 +10,7 @@ const ProjectData = [
     technologies: ['React', 'Node.js', 'Express', 'MongoDB'],
     githubLink: 'https://github.com/AnandhaKumar2004/Wikipedia',
     liveLink: 'https://wikipediawebak.ccbp.tech/', 
-    imageUrl: '../src/assets/wiki.png', 
+    imageUrl: wiki,
   },
   {
     id: 2,
@@ -15,7 +19,7 @@ const ProjectData = [
     technologies: ['React', 'CSS'],
     githubLink: 'https://github.com/AnandhaKumar2004/EmojiGame_React',
     liveLink: 'https://emojigameak.ccbp.tech/',
-    imageUrl: '../src/assets/emoji-game.png',
+    imageUrl: emoji ,
   },
   {
     id: 3,
@@ -24,7 +28,7 @@ const ProjectData = [
     technologies: ['React', 'CSS'],
     githubLink: 'https://github.com/AnandhaKumar2004/JobbyApp',
     liveLink: 'https://jobbyappsak.ccbp.tech/',
-    imageUrl: '../src/assets/jobby-apps.png',
+    imageUrl: jobby,
   },
   // Add more projects with image URLs
 ];

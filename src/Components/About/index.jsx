@@ -1,4 +1,5 @@
 import './index.css'
+import Resume from '../../assets/resume.pdf';
 import SkillBar from "../SkillBar";
 
 const About = () => {
@@ -15,14 +16,14 @@ const About = () => {
           <p className='specialization'>Specialization: Artificial Intelligence and Data Science</p>
           <p className='email'>Email: anandhakumar2621@gmail.com</p>
           <p className='phone'>Phone: 9092038300</p>
-          <button className='btn' onClick={() => window.open("../src/assets/resume.pdf", "_blank")}>Download Resume</button>
+          <button className='btn' onClick={() => window.open(Resume, "_blank")}>Download Resume</button>
         </div>
         <div className='skills'>
           <SkillBar skill="HTML" percentage={90} />
           <SkillBar skill="CSS" percentage={80} />
-          <SkillBar skill="JavaScript" percentage={75} />
-          <SkillBar skill="Python" percentage={70} />
-          <SkillBar skill="SQL" percentage={80} />
+          <SkillBar skill="JavaScript" percentage={70} />
+          <SkillBar skill="Python" percentage={80} />
+          <SkillBar skill="SQL" percentage={75} />
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import './index.css'
+import profile from '../../assets/profilePhoto.png';
 import { useNavigate } from 'react-router-dom'  // if using v6
 
 const Home = () => {
@@ -25,7 +26,7 @@ const navigate = useNavigate();
         </button>
       </div>
       <div className="profile-photo">
-        <img src="../src/assets/profilePhoto.png" alt="Profile" className="profile-photo" />
+        <img src={profile} alt="Profile" className="profile-photo" />
       </div>
     </div>
   );

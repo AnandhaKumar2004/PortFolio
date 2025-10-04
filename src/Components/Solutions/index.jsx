@@ -1,4 +1,8 @@
 import './index.css';
+import backend from '../../assets/backend.png';
+import uiux from '../../assets/uiux.png';
+import webDev from '../../assets/webDev.png';  // exact case match
+import fullstack from '../../assets/fullstack.png';
 
 const Solutions = () => {
   return (
@@ -7,24 +11,24 @@ const Solutions = () => {
       <p>Here are some of the services I offer:</p>
       <div className='service-cards'>
         <div className='service-card'>
-          <img src="../src/assets/uiux.png" alt="UI UX" />
+          <img src={uiux} alt="UI UX" />
           <h2>UI/UX Design</h2>
           <p>I create user-friendly and visually appealing designs that enhance user experience and engagement.</p>
         </div>
         <div className='service-card'>
-          <img src="../src/assets/webdev.png" alt="Web Development" />
+          <img src={webDev} alt="Web Development" />
           <h2>Web Development</h2>
           <p>I build responsive and high-performance web applications using the latest technologies and best practices.</p>
         </div>
         <div className='service-card'>
-          <img src="../src/assets/backend.png" alt="Backend Development" />
+          <img src={backend} alt="Backend Development" />
           <h2>Backend Development</h2>
           <p>I have experience in building robust backend systems using Node.js, Express, and MongoDB.</p>
         </div>
         <div className='service-card'>
-          <img src="../src/assets/fullstack.png" alt="Full Stack Development" />
+          <img src={fullstack} alt="Full Stack Development" />
           <h2>Full Stack Development</h2>
-            <p>I am proficient in both front-end and back-end development, allowing me to build complete web applications from start to finish.</p>
+          <p>I am proficient in both front-end and back-end development, allowing me to build complete web applications from start to finish.</p>
         </div>
       </div>
     </div>
