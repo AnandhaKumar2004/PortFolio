@@ -7,7 +7,7 @@ import "./index.css";
 
 const Contact = () => {
   const form = useRef();
-  const receiverEmail = "anandhakumar2oo48@gmail.com"; // ✅ moved here (component scope)
+  const receiverEmail = "anandhakumar20048@gmail.com"; // ✅ moved here (component scope)
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -79,7 +79,7 @@ const Contact = () => {
         <div className="info-card">
           <FontAwesomeIcon icon={faPaperPlane} className="icon" />
           <p>Website</p>
-          <span>www.yourwebsite.com</span>
+          <span>https://akportfolioanand.netlify.app</span>
         </div>
       </div>
 
