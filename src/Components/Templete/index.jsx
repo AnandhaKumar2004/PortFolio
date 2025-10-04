@@ -77,7 +77,7 @@ const Template = () => {
                 <div className="logo-container-mobile">
                     <NavLink to="/">
                     <img
-                        src="../src/assets/logo.png"
+                        src={logo}
                         alt="Company Logo"
                         className="logo"
                     />
